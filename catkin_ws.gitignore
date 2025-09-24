@@ -1,0 +1,14 @@
+# Ignore build, devel, and install directories
+/build/
+/devel/
+/install/
+
+# Ignore temporary files
+*.swp
+*.bak
+*.log
+
+# Ignore IDE specific files (if you're using an IDE)
+.vscode/
+.idea/
+

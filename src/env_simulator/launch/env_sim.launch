@@ -1,0 +1,22 @@
+<launch>
+  <!-- 如果 AEDE 已经设置 use_sim_time=true，这里可不重复 -->
+  <!-- 参数覆盖（按需改） -->
+  <param name="pose_topic" value="/state_estimation" />
+  <param name="frame_id" value="map" />
+
+  <node pkg="your_pkg_name" type="env_publisher_param.py" name="env_publisher" output="screen">
+    <param name="pose_topic" value="/state_estimation"/>
+    <param name="frame_id" value="map"/>
+    <param name="grid_min_x" value="-40.0"/>
+    <param name="grid_max_x" value="40.0"/>
+    <param name="grid_min_y" value="-40.0"/>
+    <param name="grid_max_y" value="40.0"/>
+    <param name="grid_res" value="1.0"/>
+  </node>
+
+  <node pkg="your_pkg_name" type="env_recorder_param.py" name="env_recorder" output="screen">
+    <param name="pose_topic" value="/state_estimation"/>
+    <param name="output_csv" value="$(env HOME)/env_samples.csv"/>
+  </node>
+</launch>
+

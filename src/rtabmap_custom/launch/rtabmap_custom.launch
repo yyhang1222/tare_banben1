@@ -1,0 +1,24 @@
+<launch>
+  <!-- 使用仿真时间，实际使用时根据需要改 false -->
+  <param name="use_sim_time" value="false" />
+
+  <node pkg="rtabmap_ros" type="rtabmap" name="rtabmap" output="screen">
+    <param name="frame_id" value="base_link"/>
+    <param name="subscribe_rgb" value="true"/>
+    <param name="subscribe_depth" value="true"/>
+    <param name="approx_sync" value="true"/>
+    <param name="queue_size" value="10"/>
+    <param name="subscribe_scan" value="false"/>
+
+    <!-- 话题重映射：改成你摄像头实际话题名 -->
+    <remap from="/rgb/image" to="/camera/rgb/image_rect_color"/>
+    <remap from="/depth/image" to="/camera/depth_registered/image_raw"/>
+    <remap from="/rgb/camera_info" to="/camera/rgb/camera_info"/>
+    <remap from="/odom" to="/odom"/>
+  </node>
+
+  <node pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" output="screen">
+    <param name="frame_id" value="base_link"/>
+  </node>
+</launch>
+

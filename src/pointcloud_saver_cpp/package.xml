@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pointcloud_saver_cpp</name>
+  <version>0.0.1</version>
+  <description>
+    A ROS node that subscribes to a PointCloud2 topic, accumulates all points,
+    and saves the full-resolution map to a PCD file on shutdown.
+  </description>
+
+  <maintainer email="1660039889@qq.com">yyh</maintainer>
+  <author email="1660039889@qq.com">yyh</author>
+
+  <license>BSD</license>
+
+  <url type="repository">https://github.com/yyh/pointcloud_saver_cpp</url>
+  <url type="bugtracker">https://github.com/yyh/pointcloud_saver_cpp/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>pcl_ros</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>pcl_conversions</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+</package>
+
